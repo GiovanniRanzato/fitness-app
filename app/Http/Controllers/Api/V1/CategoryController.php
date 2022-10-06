@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreexercisesRequest;
-use App\Http\Requests\UpdateexercisesRequest;
-use App\Models\exercises;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\V1\StoreCategoryRequest;
+use App\Http\Requests\V1\UpdateCategoryRequest;
+use App\Models\Category;
 
-class ExercisesController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class ExercisesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreexercisesRequest  $request
+     * @param  \App\Http\Requests\V1\StoreCategoryRequest; $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreexercisesRequest $request)
+    public function store(StoreCategoryRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class ExercisesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\exercises  $exercises
+     * @param  \App\Models\categories  $model
      * @return \Illuminate\Http\Response
      */
-    public function show(exercises $exercises)
+    public function show(Category $model)
     {
         //
     }
@@ -53,10 +54,10 @@ class ExercisesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\exercises  $exercises
+     * @param  \App\Models\Category  $model
      * @return \Illuminate\Http\Response
      */
-    public function edit(exercises $exercises)
+    public function edit(Category $model)
     {
         //
     }
@@ -64,11 +65,11 @@ class ExercisesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateexercisesRequest  $request
-     * @param  \App\Models\exercises  $exercises
+     * @param  \App\Http\Requests\V1\UpdateCategoryRequest  $request
+     * @param  \App\Models\Category  $model
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateexercisesRequest $request, exercises $exercises)
+    public function update(UpdateCategoryRequest $request, Category $model)
     {
         //
     }
@@ -76,10 +77,10 @@ class ExercisesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\exercises  $exercises
+     * @param  \App\Models\Category  $model
      * @return \Illuminate\Http\Response
      */
-    public function destroy(exercises $exercises)
+    public function destroy(Category $model)
     {
         //
     }

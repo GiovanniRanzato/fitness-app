@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StorecardsRequest;
-use App\Http\Requests\UpdatecardsRequest;
-use App\Models\cards;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\V1\StoreCardRequest;
+use App\Http\Requests\V1\UpdateCardRequest;
+use App\Models\Card;
 
-class CardsController extends Controller
+class CardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class CardsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorecardsRequest  $request
+     * @param  \App\Http\Requests\V1\StoreCardRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorecardsRequest $request)
+    public function store(StoreCardRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class CardsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\cards  $cards
+     * @param  \App\Models\Card  $model
      * @return \Illuminate\Http\Response
      */
-    public function show(cards $cards)
+    public function show(Card $model)
     {
         //
     }
@@ -53,10 +54,10 @@ class CardsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\cards  $cards
+     * @param  \App\Models\Card  $model
      * @return \Illuminate\Http\Response
      */
-    public function edit(cards $cards)
+    public function edit(Card $model)
     {
         //
     }
@@ -64,11 +65,11 @@ class CardsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatecardsRequest  $request
-     * @param  \App\Models\cards  $cards
+     * @param  \App\Http\Requests\V1\UpdateCardRequest  $request
+     * @param  \App\Models\Card  $model
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatecardsRequest $request, cards $cards)
+    public function update(UpdateCardRequest $request, Card $model)
     {
         //
     }
@@ -76,10 +77,10 @@ class CardsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\cards  $cards
+     * @param  \App\Models\Card  $model
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cards $cards)
+    public function destroy(Card $model)
     {
         //
     }

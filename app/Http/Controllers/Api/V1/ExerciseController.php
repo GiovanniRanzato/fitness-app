@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StorecategoriesRequest;
-use App\Http\Requests\UpdatecategoriesRequest;
-use App\Models\categories;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\V1\StoreExerciseRequest;
+use App\Http\Requests\V1\UpdateExerciseRequest;
+use App\Models\Exercise;
 
-class CategoriesController extends Controller
+class ExerciseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class CategoriesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorecategoriesRequest  $request
+     * @param  \App\Http\Requests\V1\StoreExerciseRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorecategoriesRequest $request)
+    public function store(StoreExerciseRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Exercise  $model
      * @return \Illuminate\Http\Response
      */
-    public function show(categories $categories)
+    public function show(Exercise $model)
     {
         //
     }
@@ -53,10 +54,10 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Exercise  $model
      * @return \Illuminate\Http\Response
      */
-    public function edit(categories $categories)
+    public function edit(Exercise $model)
     {
         //
     }
@@ -64,11 +65,11 @@ class CategoriesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatecategoriesRequest  $request
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Http\Requests\V1\UpdateExerciseRequest  $request
+     * @param  \App\Models\Exercise  $model
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatecategoriesRequest $request, categories $categories)
+    public function update(UpdateExerciseRequest $request, Exercise $model)
     {
         //
     }
@@ -76,10 +77,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Exercise  $model
      * @return \Illuminate\Http\Response
      */
-    public function destroy(categories $categories)
+    public function destroy(Exercise $model)
     {
         //
     }

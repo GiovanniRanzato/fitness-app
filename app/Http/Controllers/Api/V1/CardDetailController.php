@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\Storecard_detailsRequest;
-use App\Http\Requests\Updatecard_detailsRequest;
-use App\Models\card_details;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\V1\StoreCardDetailRequest;
+use App\Http\Requests\V1\UpdateCardDetailRequest;
+use App\Models\CardDetail;
 
-class CardDetailsController extends Controller
+class CardDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class CardDetailsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storecard_detailsRequest  $request
+     * @param  \App\Http\Requests\V1\StoreCardDetailRequest;  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storecard_detailsRequest $request)
+    public function store(StoreCardDetailRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class CardDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\card_details  $card_details
+     * @param  \App\Models\CardDetail  $model
      * @return \Illuminate\Http\Response
      */
-    public function show(card_details $card_details)
+    public function show(CardDetail $model)
     {
         //
     }
@@ -53,10 +54,10 @@ class CardDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\card_details  $card_details
+     * @param  \App\Models\CardDetail  $model
      * @return \Illuminate\Http\Response
      */
-    public function edit(card_details $card_details)
+    public function edit(CardDetail $model)
     {
         //
     }
@@ -64,11 +65,11 @@ class CardDetailsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatecard_detailsRequest  $request
-     * @param  \App\Models\card_details  $card_details
+     * @param  App\Http\Requests\V1\UpdateCardDetailRequest  $request
+     * @param  \App\Models\CardDetails  $model
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatecard_detailsRequest $request, card_details $card_details)
+    public function update(UpdateCardDetailRequest $request, CardDetail $model)
     {
         //
     }
@@ -76,10 +77,10 @@ class CardDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\card_details  $card_details
+     * @param  \App\Models\card_details  $model
      * @return \Illuminate\Http\Response
      */
-    public function destroy(card_details $card_details)
+    public function destroy(CardDetail $model)
     {
         //
     }

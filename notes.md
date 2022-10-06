@@ -110,6 +110,12 @@
         $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
     });
 
+## Run Migration 
+- php artisan migrate
+
+## Check Rolloback (optional)
+- php artisan migrate:rollback --step=1 (run the command as many time as the number of migrations)
+- php artisan migrate <!-- to restore migrations -->
 
 
  
