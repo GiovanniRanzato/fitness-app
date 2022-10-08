@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\UserRegisterRequest;
 use App\Http\Requests\V1\UserLoginRequest;
+use App\Http\Resources\V1\UserResource;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class AuthController extends Controller
         $token= $user->createAuthToken();
 
         $response = [
-            'user' => $user,
+            'data' => new UserResource($user),
             'token' => $token
         ];
         return response($response, 201);
@@ -46,7 +47,7 @@ class AuthController extends Controller
             $user =  Auth::user();
             $token = $user->createAuthToken();
             $response = [
-                'user' => $user,
+                'data' => new UserResource($user),
                 'token' => $token
             ];
             return response($response, 201);
