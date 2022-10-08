@@ -44,7 +44,7 @@ class AuthController extends Controller
      */
     public function login (UserLoginRequest $request) {
         if(Auth::attempt($request->All())) {
-            $user =  Auth::user();
+            $user =  new User(Auth::user()->id);
             $token = $user->createAuthToken();
             $response = [
                 'data' => new UserResource($user),

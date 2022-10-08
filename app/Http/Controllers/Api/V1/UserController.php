@@ -19,7 +19,7 @@ class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return App\Http\Resources\V1\UserCollection
      */
     public function index(Request $request)
@@ -29,6 +29,7 @@ class UserController extends Controller
             $filter = new UserFilter();
             $filterItems = $filter->transform($request);
             $results = User::where($filterItems);
+            // $results = $results->with("category");
             return new UserCollection($results->paginate()->appends($request->query()));
         } else {
             return new Response(['message' => $response->message()], 401);
@@ -58,7 +59,7 @@ class UserController extends Controller
 
         if (!$requestUser)
             return new Response(['message' => 'Not Found.'], 404);
-
+            
         $response = Gate::inspect('show-user', [$requestUser]);
         if ($response->allowed()) {
             return new UserResource($requestUser);
@@ -75,11 +76,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateUserRequest $request, User $user) {
-        if($request->media_url)
-            $user->clearMediaCollection();
-            $user->addMedia($request->media_url)
-            ->preservingOriginal()
-            ->toMediaCollection();
+        // if($request->media_url)
+        //     $user->clearMediaCollection();
+        //     $user->addMedia($request->media_url)
+        //     ->preservingOriginal()
+        //     ->toMediaCollection();
         return new UserResource($user->update($request->all()) ? $user : []);
     }
 

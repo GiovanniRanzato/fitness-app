@@ -11,8 +11,9 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-
-
+/** 
+* @method bool isAdmin()
+*/
 class User extends Authenticatable // implements HasMedia
 {
 
@@ -73,6 +74,14 @@ class User extends Authenticatable // implements HasMedia
         }
         return $token;
     }
+
+    /** 
+     * Relationships
+     */
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
     /**
      * Tell if user is admin or not
      * @return boolean

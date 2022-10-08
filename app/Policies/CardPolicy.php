@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\categories;
+use App\Models\Card;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CategoriesPolicy
+class CardPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class CategoriesPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Card  $card
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, categories $categories)
+    public function view(User $user, Card $card)
     {
         //
     }
@@ -48,10 +48,10 @@ class CategoriesPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Card  $card
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, categories $categories)
+    public function update(User $user, Card $card)
     {
         //
     }
@@ -60,10 +60,10 @@ class CategoriesPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Card  $card
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, categories $categories)
+    public function delete(User $user, Card $card)
     {
         //
     }
@@ -72,10 +72,10 @@ class CategoriesPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Card  $card
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, categories $categories)
+    public function restore(User $user, Card $card)
     {
         //
     }
@@ -84,10 +84,10 @@ class CategoriesPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\categories  $categories
+     * @param  \App\Models\Card  $card
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, categories $categories)
+    public function forceDelete(User $user, Card $card)
     {
         //
     }

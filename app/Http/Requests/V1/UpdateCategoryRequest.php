@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\V1;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateCategoryRequest extends FormRequest
@@ -13,7 +15,8 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        $user = Auth::user();
+        return $user ? $user->isAdmin() : false;
     }
 
     /**
@@ -23,8 +26,15 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $method = $this->method;
+        if($method == 'PUT') {
+            return [
+                'name' => ['required'],
+            ];
+        } else {
+            return [
+                'name'       => ['sometimes','required'],
+            ];  
+        }
     }
 }

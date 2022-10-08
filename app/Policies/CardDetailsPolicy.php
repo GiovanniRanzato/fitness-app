@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\card_details;
+use App\Models\CardDetail;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CardDetailsPolicy
@@ -28,7 +28,7 @@ class CardDetailsPolicy
      * @param  \App\Models\card_details  $cardDetails
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, card_details $cardDetails)
+    public function view(User $user, CardDetail $cardDetail)
     {
         //
     }
@@ -48,10 +48,10 @@ class CardDetailsPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\card_details  $cardDetails
+     * @param  \App\Models\CardDetail  $cardDetail
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, card_details $cardDetails)
+    public function update(User $user, CardDetail $cardDetail)
     {
         //
     }
@@ -60,10 +60,10 @@ class CardDetailsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\card_details  $cardDetails
+     * @param  \App\Models\CardDetail  $cardDetail
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, card_details $cardDetails)
+    public function delete(User $user, CardDetail $cardDetail)
     {
         //
     }
@@ -72,10 +72,10 @@ class CardDetailsPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\card_details  $cardDetails
+     * @param  \App\Models\CardDetail  $cardDetail
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, card_details $cardDetails)
+    public function restore(User $user, CardDetail $cardDetail)
     {
         //
     }
@@ -84,10 +84,10 @@ class CardDetailsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\card_details  $cardDetails
+     * @param  \App\Models\CardDetail  $cardDetail
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, card_details $cardDetails)
+    public function forceDelete(User $user, CardDetail $cardDetails)
     {
         //
     }
