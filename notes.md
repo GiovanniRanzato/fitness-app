@@ -118,7 +118,23 @@
 - php artisan migrate <!-- to restore migrations -->
 
 
- 
+## Add User Auth Controller
+php artisan make:controller Api/V1/UserController --api
+php artisan make:controller Api/V1/AuthController --api 
+
+## Add Filters, request and resources 
+- Add file Api Filter
+- Add user filter
+- Add User Resource and collection
+- Add AuthServiceProvider Gate auth
+- Add UserLoginRequest
+- Add UserRegister Request
+- Add UserResource
+- Add UserCollection
+
+## Add Routes
+- Add ApiResource user
+
 
                 
                 
